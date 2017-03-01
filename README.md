@@ -2,7 +2,7 @@
 
 > Prereq: navigate to the `notes-demo-deploy` folder in your terminal or command prompt.
 
-## Advanced Loopback Exaple and... Go!
+## Advanced Loopback Example and... Go!
 For this advanced tutorial we are going to show how to create a custom API endpoint in the Notes section that adds the weather to a new note.
 
 ### 1. Install request node module
