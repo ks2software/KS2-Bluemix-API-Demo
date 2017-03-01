@@ -2,7 +2,7 @@
 
 > Prereq: copy the `notes-demo` folder to a new folder called `notes-demo-deploy`
 
-## Section 2 and... Go!
+## Deploy to Bluemix and... Go!
 
 ### 1. Create your deployment file
 We are going to use CloudFoundry to deploy our Loopback application to a `node.js` runtime out on Bluemix. So you are going to need to create a `manifest.yml` file in your loopback project directory that looks like this.
