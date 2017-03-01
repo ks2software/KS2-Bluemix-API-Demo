@@ -2,7 +2,7 @@
 
 You did it you have made it to step one of the KS2 Bluemix API Demo. Your mothers will be so proud. (Print this page to hang on fridge) 
 
-## And... Go!
+## Create our Bluemix API and... Go!
 ### First things first
 At this point you should have `node.js` installed on your computer and the `loopback` npm package installed as a global node module.
 
