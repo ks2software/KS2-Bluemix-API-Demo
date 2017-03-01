@@ -44,3 +44,29 @@ module.exports = function(Note) {
 };
 ```
 This new block of code registers a new `POST Notes` endpoint that accepts a json body, queries the current weather from open weather, appends weather data to the notes body and returns the response from creating a new `Note`.
+
+### Test your new endpoint
+Now that we have registered our new endpoint we will want to test out our application locally. To run your project locally run the following command.
+
+```
+> npm start
+```
+
+Once your application starts open the following URL in your browser [http://localhost:3000/explorer](http://localhost:3000/explorer)
+
+Open the `Notes` endpoint on the webpage
+
+![open-notes](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-0-0-0-0-3000-explorer-1488396868003.png) 
+
+Select the `POST Notes/weather` endpoint you created and paste the following json into the body section and click the `Try it out!` button.
+
+```
+{
+  "title": "New Note",
+  "content": "Note should contain weather"
+}
+```
+
+![weather](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-localhost-3000-explorer-1488397274709.png)
+
+As you can see we have successfully posted a Note and the current weather data has been appended to our Note.
