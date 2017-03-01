@@ -5,8 +5,12 @@ Welcome to the KS2 Technologies Bluemix API demo / follow along. We are going to
 > Note: If you have installed all the dependencies and would like to get started or you are looking for a specific step just select the branch dropdown and select the step you are looking for. 
 
 ##Required Technologies
+* [Bluemix account](https://console.ng.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
 * [Node.js](https://nodejs.org/en/download/)
 * [cloudfoundry](https://github.com/cloudfoundry/cli#downloads)
+
+## Sign up for bluemix account
+Regisert for a new [Bluemix account](https://console.ng.bluemix.net/registration/?target=%2Fdashboard%2Fapps). You should be able to create an account that will allow you to use try Bluemix for 30 days for free.
 
 ## How to set up your computer
 Once you have `node.js` and `cloudfoundry` installed you will need to install a few global `npm` package.
