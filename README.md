@@ -17,6 +17,8 @@ Now we are going to create a custom Notes endpoint called weather that is going 
 
 First we need to register a remote method with our Loopback `Notes` endpoint. Open the `common/models/notes.js` file. Replace the contents of the `notes.js` file with the following
 
+> Note: replace the key variable with the key provided
+
 ```
 var request = require('request');
 
@@ -30,7 +32,8 @@ module.exports = function(Note) {
 	});
 	
 	Note.weather = function (body, cb) {
-		var url = 'http://api.openweathermap.org/data/2.5/weather?zip=66214,us&units=imperial&appid=***';
+	   var key = '';
+		var url = 'http://api.openweathermap.org/data/2.5/weather?zip=66214,us&units=imperial&appid=' + key;
 		request(url, function(err, response, data) {
 			if(err) cb(err, null);
 			else {
