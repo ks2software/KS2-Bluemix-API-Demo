@@ -1,7 +1,5 @@
 # KS2 Technologies Bluemix API
 
-You did it you have made it to step one of the KS2 Bluemix API Demo. Your mothers will be so proud. (Print this page to hang on fridge) 
-
 > Prereq: copy the `notes-demo` folder to a new folder called `notes-demo-deploy`
 
 ## Section 2 and... Go!
