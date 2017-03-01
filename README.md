@@ -6,7 +6,6 @@ Welcome to the KS2 Technologies Bluemix API demo / follow along. We are going to
 
 ##Required Technologies
 * [Node.js](https://nodejs.org/en/download/)
-* [postman](https://www.getpostman.com/)
 * [cloudfoundry](https://github.com/cloudfoundry/cli#downloads)
 
 ## How to set up your computer
