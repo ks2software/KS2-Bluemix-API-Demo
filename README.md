@@ -2,103 +2,132 @@
 
 You did it you have made it to step one of the KS2 Bluemix API Demo. Your mothers will be so proud. (Print this page to hang on fridge) 
 
-## And... Go!
-### First things first
-At this point you should have `node.js` installed on your computer and the `loopback` npm package installed as a global node module.
+> Prereq: copy the `notes-demo` folder to a new folder called `notes-demo-deploy`
 
-### 1. Generating the API project
-Now we can begin setting up our project. We will start by typing in the command that will generate our loopback project.
+## Section 2 and... Go!
 
-```
-> lb
-```
-This command will take you through the loopback project generator. We are going to use the following information to generate our project.
-
-- name             : notes-demo
-- directory        : notes-demo (or just hit enter)
-- version          : use arrow keys to select `3.x (current)`
-- application type : use arrow keys to select the `notes` default app
-
-Your terminal should loop something like this
+### 1. Create your deployment file
+We are going to use CloudFoundry to deploy our Loopback application to a `node.js` runtime out on Bluemix. So you are going to need to create a `manifest.yml` file in your loopback project directory that looks like this.
 
 ```
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: notes-demo-<Your Last Name>
+  host: notes-demo-<Your Last Name>
+  disk_quota: 512M
 
-     _-----_
-    |       |    ╭──────────────────────────╮
-    |--(o)--|    │  Let's create a LoopBack │
-   `---------´   │       application!       │
-    ( _´U`_ )    ╰──────────────────────────╯
-    /___A___\   /
-     |  ~  |
-   __'.___.'__
- ´   `  |° ´ Y `
+``` 
+When we run the CloudFoundry command to push our code to Bluemix it will look for this `manifest.yml` file and use it to build our application server. CloudFoundry will take care of all of the necessary components for creating a `node.js` server.
 
-? What's the name of your application? notes-demo
-? Enter name of the directory to contain the project: notes-demo
-   create notes-demo/
-     info change the working directory to notes-demo
+### 2. Deploy your application
+Once you have created your `manifest.yml` file you are ready to deploy your app to bluemix. 
 
-? Which version of LoopBack would you like to use? 3.x (current)
-? What kind of application do you have in mind? notes (A project containing a basic working example, including a memory database)
-```
-Once you have filled out this infromation and hit enter your app should have downloaded all of the necessary dependencies and generated all of the files you need to run this api.
+We will start by opening your terminal or command prompt app.
 
-### 2. Running the API Locally
+Once this is opened navigate to the directory your loopback application is in. 
 
-At this point you now have a fully functioning api. To test our your api move from your current terminal directory into the `notes-demo` directory with the following command
+> Note: Make sure you are in the `notes-demo-deploy` folder in your git repository.
+
+Now you will need to double check that you are logged in to the CloudFoundry cli by typing the following command.
 
 ```
-> cd notes-demo
+> cf login
 ```
 
-Then run the api by typing the following command
+This command will take you through the login process.
 
 ```
-> npm start
+> cf login
+API endpoint: https://api.ng.bluemix.net
+
+Email> djarvis@ks2inc.com
+
+Password>
+Authenticating...
+OK
+
+Select an org (or press enter to skip):
+1. org1
+2. demoOrg
+3. org3
+
+Org> 2
+Targeted org demoOrg
+
+Select a space (or press enter to skip):
+1. space1
+2. space2
+3. internal_sandbox
+4. space3
+
+Space> 3
+Targeted space internal_sandbox
+
+
+
+API endpoint:   https://api.ng.bluemix.net (API version: 2.54.0)
+User:           djarvis@ks2inc.com
+Org:            demoOrg
+Space:          internal_sandbox
+```
+Once you have logged in your are ready to deploy your app to Bluemix.
+
+```
+> cf push
 ```
 
-Once your project has started you will see the server start message that looks like this
+This command will deploy your app to Bluemix with the specifications you supplied in your `manifest.yml` file. Your output should look like this when it is complete.
 
 ```
-> notes-demo@1.0.0 start <YOUR-PATH>/notes-demo
-> node .
+Using manifest file <Your Path>/notes-demo-deploy/manifest.yml
 
-Web server listening at: http://0.0.0.0:3000
-Browse your REST API at http://0.0.0.0:3000/explorer
+Updating app notes-demo-app in org ks2_technologies / space internal_sandbox as djarvis@ks2inc.com...
+OK
+
+Using route notes-demo-app.mybluemix.net
+Uploading notes-demo-app...
+Uploading app files from: <Your Path>/notes-demo-deploy
+Uploading 10.7M, 10851 files
+Done uploading
+OK
+
+Stopping app notes-demo-app in org ks2_technologies / space internal_sandbox as djarvis@ks2inc.com...
+OK
+
+Starting app notes-demo-app in org ks2_technologies / space internal_sandbox as djarvis@ks2inc.com...
+Downloading xpages_buildpack...
+
+...
+
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+1 of 1 instances running
+
+App started
+
+
+OK
+
+App notes-demo-app was started using this command `./vendor/initial_startup.rb`
+
+Showing health and status for app notes-demo-app in org ks2_technologies / space internal_sandbox as djarvis@ks2inc.com...
+OK
+
+requested state: started
+instances: 1/1
+usage: 256M x 1 instances
+urls: notes-demo-app.mybluemix.net
+last uploaded: Wed Mar 1 18:42:44 UTC 2017
+stack: cflinuxfs2
+buildpack: SDK for Node.js(TM) (ibm-node.js-4.7.2, buildpack-v3.10-20170119-1146)
+
+     state     since                    cpu    memory           disk             details
+#0   running   2017-03-01 12:44:17 PM   0.0%   111.4M of 256M   139.5M of 512M
 ```
 
-### 3. Testing your API locally
-Now to view your api endpoints open `http://0.0.0.0:3000/explorer` in whatever browser you would like.
+After your app is deployed to Bluemix you you view and test out your API at the `host` you had created in your `manifest.yml` file.
 
-This should show you a webpage that looks something like this
-![notes-demo](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-0-0-0-0-3000-explorer-1488385860414.png)
-
-This will allow you to explore your newly created API. Lets click on the `Note` section to reveal all of your `Note` related endpoints.
-
-![note-expanded](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-0-0-0-0-3000-explorer-1488386024443.png)
-
-To create a new note with your new API click on the `POST Notes` endpoint and input the following json object into the data section.
-
-```
-{
-  "title": "New Note",
-  "content": "This is something I wanna remember"
-}
-```
-Once you have entered the json payload into the data section click the `Try it out!` button. This will store a new `Note` in your API datasource. Your screen will look something like this.
-
-![note-saved](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-0-0-0-0-3000-explorer-1488386640620.png)
-
-Now that we have created a note we can query for this note using the `GET Notes` endpoint.
-
-![note-fetch](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-0-0-0-0-3000-explorer-1488386845378.png)
-
-> NOTE: To stop this local server got to your terminal window and hit `ctl + c`
-
-## Section 1 Complete
-You have now completed creating your first API. In the next Section we are going to learn how to deploy this application as a `node.js` in bluemix. To get to the next section select the `Section-2` branch in the branch dropdown. 
-
-## General notes about the API project
-
-### Data source
-In a loopback project your data source is declaired in the `server/datasources.json` file. Loopback takes these config files and turnes them into javascript code that accesses your database. 
+[https://notes-demo-app.mybluemix.net/explorer](https://notes-demo-app.mybluemix.net/explorer)
