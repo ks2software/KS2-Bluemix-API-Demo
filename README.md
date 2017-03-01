@@ -22,9 +22,11 @@ Open your terminal / command prompt app on your Mac or Windows computer
 Run the following command to install loopback
 
 ```
-> npm install loopback -g
+npm install loopback -g
 ```
 The `-g` flag installs the loopback commandline interface globally on your computer. 
+
+> NOTE: if you get a permission denied after the install finishes it means you need to run as admin / sudo user so try this command `sudo npm install loopback -g`
 
 ## Following Along
 If you have installed all of the componets to your computer and you would like to follow along with the demonstration just pull or download the step 1 branch from this repository. This will initalize your folder with this git repository and allow you to pull from another step in the excersize if you get lost.
