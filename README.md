@@ -2,6 +2,8 @@
 
 Welcome to the KS2 Technologies Bluemix API demo / follow along. We are going to be demonstrating how to create an API and how to deploy that API to bluemix. 
 
+> Note: If you have installed all the dependancies and would like to get started or you are looking for a specific step just select the branch dropdown and select the step you are looking for. 
+
 ##Required Technologies
 * [Node.js](https://nodejs.org/en/download/)
 * [postman](https://www.getpostman.com/)
