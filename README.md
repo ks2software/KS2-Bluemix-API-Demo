@@ -1,6 +1,15 @@
 # KS2 Technologies Bluemix API
 
-Welcome to the KS2 Technologies Bluemix API demo / follow along. We are going to be demonstrating how to create an API and how to deploy that API to bluemix. 
+Welcome to the KS2 Technologies Bluemix API demo / follow along. We are going to be demonstrating how easy it is to create and deploy an API to bluemix. 
+
+##### What is an API?
+An API is an application programming interface that allows other developers or API consumers to access data using standerd HTTP protocols.
+
+##### What is Loopback?
+Loopback is a configuration over coding appoach to creating secure CRUD based APIs to expose your data.
+
+##### What is Bluemix?
+Bluemix is a PaaS that allows developers to create applications in the cloud without the hassle of maintaining hardware infrastructure or networking.
 
 > Note: If you have installed all the dependencies and would like to get started or you are looking for a specific step just select the branch dropdown and select the step you are looking for. 
 
