@@ -41,7 +41,7 @@ Once your watson service has been created save your Watson credentials to a note
 ![watson-credentials](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-console-ng-bluemix-net-services-2906cb9b-d878-4db7-a1e6-820dfd01266a-1488437127410.png)
 
 
-## How to set up your computer
+## Development setup
 Once you have `node.js` and `cloudfoundry` installed you will need to install a few global `npm` package.
 
 #### Step 1
