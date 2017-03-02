@@ -7,9 +7,10 @@ You did it you have made it to step one of the KS2 Bluemix API Demo. Your mother
 At this point you should have `node.js` installed on your computer and the `loopback` npm package installed as a global node module.
 
 ### 1. Generating the API project
-Now we can begin setting up our project. We will start by typing in the command that will generate our loopback project.
+Now we can begin setting up our project. Make sure you still have your terminal or command prompt up and we will start by typing in the command that will generate our loopback project.
 
 ```
+# In your ~/lbproject folder run this command
 > lb
 ```
 This command will take you through the loopback project generator. We are going to use the following information to generate our project.
