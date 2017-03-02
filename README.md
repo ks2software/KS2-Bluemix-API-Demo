@@ -21,6 +21,26 @@ Bluemix is a PaaS that allows developers to create applications in the cloud wit
 ## Sign up for bluemix account
 Regisert for a new [Bluemix account](https://console.ng.bluemix.net/registration/?target=%2Fdashboard%2Fapps). You should be able to create an account that will allow you to use try Bluemix for 30 days for free.
 
+### Log in to bluemix console
+Now that you have created and verified your account lets login to the [Bluemix dashboard](https://console.ng.bluemix.net/)
+
+Once you have logged in we are going to spin up a Watson service so you will need to click the create app button.
+
+![create](http://ks2inc.com/wp-content/uploads/2017/03/Create-app.png)
+
+Select the Watson section on the left side of the screen and then select the Visual Recognition service.
+
+![watson-select](http://ks2inc.com/wp-content/uploads/2017/03/Watson-Service.png)
+
+By default the free tier is selected so you can hit the create button
+
+![watson-create](http://ks2inc.com/wp-content/uploads/2017/03/Watson-Create.png)
+
+Once your watson service has been created save your Watson credentials to a note on your computer. (or leave the tab open)
+
+![watson-credentials](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-console-ng-bluemix-net-services-2906cb9b-d878-4db7-a1e6-820dfd01266a-1488437127410.png)
+
+
 ## How to set up your computer
 Once you have `node.js` and `cloudfoundry` installed you will need to install a few global `npm` package.
 
@@ -37,7 +57,7 @@ The `-g` flag installs the loopback commandline interface globally on your compu
 
 > NOTE: if you get a permission denied after the install finishes it means you need to run as admin / sudo user so try this command `sudo npm install loopback -g`
 
-## Following Along
+## Following Along?
 If you have installed all of the componets to your computer and you would like to follow along with the demonstration just pull or download the step 1 branch from this repository. This will initalize your folder with this git repository and allow you to pull from another step in the excersize if you get lost.
 
 #### I'm lost what should I do?
