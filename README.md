@@ -47,7 +47,19 @@ Once you have `node.js` and `cloudfoundry` installed you will need to install a 
 #### Step 1
 Open your terminal / command prompt app on your Mac or Windows computer 
 
-#### Step 2
+#### Step 2 
+Create new directory for our project
+
+```
+MacOS
+> mkdir ~/lbproject
+> cd ~/lbproject
+Windows
+> mkdir ~\lbproject
+> cd ~\lbproject
+```
+
+#### Step 3
 Run the following command to install loopback
 
 ```
@@ -56,6 +68,8 @@ npm install loopback -g
 The `-g` flag installs the loopback commandline interface globally on your computer. 
 
 > NOTE: if you get a permission denied after the install finishes it means you need to run as admin / sudo user so try this command `sudo npm install loopback -g`
+
+### Dev set up complete
 
 ## Following Along?
 If you have installed all of the componets to your computer and you would like to follow along with the demonstration just pull or download the step 1 branch from this repository. This will initalize your folder with this git repository and allow you to pull from another step in the excersize if you get lost.
