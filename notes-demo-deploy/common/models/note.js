@@ -1,24 +1,41 @@
-var request = require('request');
+var VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3');
+var api_key = 'ebfd03ee69ddbfd0166385c8856a20eb3e0c34fe';
+var visual_recognition = new VisualRecognitionV3({
+  api_key: api_key,
+  version_date: '2016-05-19'
+});
 
 module.exports = function(Note) {
-	Note.remoteMethod('weather', {
-		accepts: [
-	      {arg: 'body', type: 'object', http: { source: 'body' }}
-	    ],
-	    http: {path: '/weather', verb: 'post'},
-	    returns: {arg: 'response', type: 'object'}
-	});
-	
-	Note.weather = function (body, cb) {
-		var url = 'http://api.openweathermap.org/data/2.5/weather?zip=66214,us&units=imperial&appid=5b56e90b81d988553e7696ced22ab67e';
-		request(url, function(err, response, data) {
-			if(err) cb(err, null);
-			else {
-				data = JSON.parse(data);
-				body.weather = data.main;
-				Note.create(body,cb);
-			}
-		});
-	}
+    // Disable Post method
+    Note.disableRemoteMethodByName('create');
+    Note.remoteMethod('createWithImage', {
+        accepts: [
+          {arg: 'body', type: 'Note', required: true, description: 'Model instance data', http: { source: 'body' }}
+        ],
+        http: {path: '/', verb: 'post'},
+        description: 'Create a new instance of the model and persist it into the data source.',
+        returns: {arg: 'data', type: 'Note'}
+    });
 
+    var classifyImage = function (body, cb) {
+        var params = {
+            url: body.image_url
+        };
+        visual_recognition.classify(params, function(err, data) {
+            if(err) cb(err, null);
+            else {
+                var imageData = data.images[0].classifiers[0].classes[0].class;
+                body.image_subject = imageData;
+                Note.create(body, cb);
+            }
+        });
+    } 
+
+    Note.createWithImage = function (body, cb) {
+        // If body has an image url classify image
+        if(body.image_url != null)
+            classifyImage(body, cb);
+        else 
+            Note.create(body, cb);
+    }
 };
