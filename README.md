@@ -16,10 +16,10 @@ Bluemix is a PaaS that allows developers to create applications in the cloud wit
 ##Required Technologies
 * [Bluemix account](https://console.ng.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
 * [Node.js](https://nodejs.org/en/download/)
-* [cloudfoundry](https://github.com/cloudfoundry/cli#downloads)
+* [Cloudfoundry](https://github.com/cloudfoundry/cli#downloads)
 
-## Sign up for bluemix account
-Regisert for a new [Bluemix account](https://console.ng.bluemix.net/registration/?target=%2Fdashboard%2Fapps). You should be able to create an account that will allow you to use try Bluemix for 30 days for free.
+## 1. Sign up for bluemix account
+Register for a new [Bluemix account](https://console.ng.bluemix.net/registration/?target=%2Fdashboard%2Fapps). You should be able to create an account that will allow you to use try Bluemix for 30 days for free.
 
 ### Log in to bluemix console
 Now that you have created and verified your account lets login to the [Bluemix dashboard](https://console.ng.bluemix.net/)
@@ -40,8 +40,15 @@ Once your watson service has been created save your Watson credentials to a note
 
 ![watson-credentials](http://ks2inc.com/wp-content/uploads/2017/03/screencapture-console-ng-bluemix-net-services-2906cb9b-d878-4db7-a1e6-820dfd01266a-1488437127410.png)
 
+## 2. Install Node.js and CloudFoundry
+Now that we have our Bluemix account set up we will get our local enviroments set up to test and deploy our API.
 
-## Development setup
+First install [Node.js](https://nodejs.org/en/download/).
+
+Then install [Cloudfoundry](https://github.com/cloudfoundry/cli#downloads)
+
+
+## 3. Development setup
 Once you have `node.js` and `cloudfoundry` installed you will need to install a few global `npm` package.
 
 #### Step 1
