@@ -161,10 +161,25 @@ Open the `Notes` endpoint on the webpage
 Select the `POST Notes` endpoint you created and paste the following json into the body section and click the `Try it out!` button.
 
 ```
+# Enter first POST request note with a picture of a dog
 {
   "title": "New Note",
   "content": "Note should contain image subject",
   "image_url": "https://camo.githubusercontent.com/e53ee329763ec3bdef43a913fe414e019de53610/68747470733a2f2f76697375616c2d7265636f676e6974696f6e2d64656d6f2e6d79626c75656d69782e6e65742f696d616765732f73616d706c65732f352e6a7067"
+}
+
+# Enter second POST request note with a picture of a cat
+{
+  "title": "New Note",
+  "content": "Note should contain image subject",
+  "image_url": "https://www.petfinder.com/wp-content/uploads/2013/09/cat-black-superstitious-fcs-cat-myths-162286659.jpg"
+}
+
+# Enter third POST request note with a picture of a cat
+{
+  "title": "New Note",
+  "content": "Note should contain image subject",
+  "image_url": "https://www.petfinder.com/wp-content/uploads/2012/11/152177319-declawing-cats-632x475-e1354303246526-632x353.jpg"
 }
 ```
 
@@ -177,7 +192,11 @@ Now we can query this Note based on the contents of the image with in the Note w
 Copy this into the filter of the HTTP GET endpoint
 
 ```
+# Grab notes with images that contain a dog
 {"where": {"image_subject": {"like":"dog"}}}
+
+# Grab notes with images that contain a cat
+{"where": {"image_subject": {"like":"cat"}}}
 ```
 
 As you can see it gave us back our not becaue the image subject contains the word dog.
