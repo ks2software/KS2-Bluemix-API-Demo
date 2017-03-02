@@ -62,9 +62,10 @@ MacOS
 > mkdir ~/lbproject
 > cd ~/lbproject
 Windows
-> mkdir ~\lbproject
-> cd ~\lbproject
+> mkdir lbproject
+> cd lbproject
 ```
+> NOTE: Windows is `alt + space` then click `e` then `p` to paste into command prompt
 
 #### Step 3
 Run the following command to install loopback
@@ -74,7 +75,7 @@ npm install loopback -g
 ```
 The `-g` flag installs the loopback commandline interface globally on your computer. 
 
-> NOTE: if you get a permission denied after the install finishes it means you need to run as admin / sudo user so try this command `sudo npm install loopback -g`
+> NOTE: If you are on windows please open a admin command prompt. If you get a permission denied after the install finishes it means you need to run as admin / sudo user so try this command `sudo npm install loopback -g`
 
 ### Dev set up complete
 
